@@ -1,3 +1,4 @@
+import sys
 from stats import get_num_words, get_character_count, sort_dict
 
 def get_book_text(filepath:str) -> str:
@@ -9,7 +10,12 @@ def get_book_text(filepath:str) -> str:
     return filecontents
 
 def main():
-    filepath = r"books/frankenstein.txt"
+    if sys.argv.count == 1:
+        print("Error: No argument given")
+        print("example: main.py books/frankenstein.txt")
+        sys.exit(1)
+
+    filepath = sys.argv[1]
     text = get_book_text(filepath)
     num_words = get_num_words(text)
     print("============ BOOKBOT ============")
