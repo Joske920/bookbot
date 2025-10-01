@@ -10,9 +10,8 @@ def get_book_text(filepath:str) -> str:
     return filecontents
 
 def main():
-    if sys.argv.count == 1:
-        print("Error: No argument given")
-        print("example: main.py books/frankenstein.txt")
+    if len(sys.argv) == 1:
+        print("Usage: python3 main.py <path_to_book>")
         sys.exit(1)
 
     filepath = sys.argv[1]
